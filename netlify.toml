@@ -1,7 +1,7 @@
 [build]
   command = 'npm run build'
-  functions = 'dist/website/analog/public'
-  publish = 'dist/website/analog'
+  publish = 'dist/website/analog/public'
+  functions = 'dist/website/analog'
 
 [[redirects]]
   from = "/*"
