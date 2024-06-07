@@ -2,8 +2,3 @@
   command = 'npm run build'
   publish = 'dist/website/analog/public'
   functions = 'dist/website/analog'
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
