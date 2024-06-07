@@ -2,7 +2,13 @@
   "name": "@analogjs-netlify/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "dev": "ng serve --host 0.0.0.0",
+    "start": "nx run website:serve",
+    "build": "nx run website:build",
+    "watch": "nx run website:build --watch",
+    "test": "nx run website:test"
+  },
   "private": true,
   "dependencies": {
     "@analogjs/content": "^1.3.0",

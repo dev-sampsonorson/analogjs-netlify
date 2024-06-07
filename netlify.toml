@@ -1,0 +1,9 @@
+[build]
+  command = 'npm run build'
+  functions = 'dist/website/analog/public'
+  publish = 'dist/website/analog'
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
