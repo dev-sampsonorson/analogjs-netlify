@@ -1,0 +1,57 @@
+{
+  "name": "website",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@analogjs/platform:vite",
+      "defaultConfiguration": "production",
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "sourcemap": false,
+          "mode": "production"
+        }
+      },
+      "outputs": [
+        "{options.outputPath}",
+        "{workspaceRoot}/dist/website/.nitro",
+        "{workspaceRoot}/dist/website/ssr",
+        "{workspaceRoot}/dist/website/analog"
+      ],
+      "options": {
+        "main": "website/src/main.ts",
+        "configFile": "website/vite.config.ts",
+        "outputPath": "dist/website/client",
+        "tsConfig": "website/tsconfig.app.json"
+      }
+    },
+    "serve": {
+      "executor": "@analogjs/platform:vite-dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "website:build",
+        "port": 4200
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "website:build:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "website:build:production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@analogjs/platform:vitest",
+      "outputs": [
+        "{projectRoot}/coverage"
+      ]
+    }
+  },
+  "tags": [],
+  "sourceRoot": "./website/src"
+}
